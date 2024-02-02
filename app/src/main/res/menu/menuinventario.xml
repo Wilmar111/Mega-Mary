@@ -9,7 +9,10 @@
         <item android:id="@+id/PerfilChofer"
             android:icon="@drawable/chofer"
             android:title="Chofer"/>
-        <item android:id="@+id/InventarioP"
+        <item android:id="@+id/Orden"
+            android:title="Oreden Pedidos"
+            android:icon="@drawable/orden"/>
+        <item android:id="@+id/Inventario"
             android:title="Inventario"
             android:icon="@drawable/listas"/>
 

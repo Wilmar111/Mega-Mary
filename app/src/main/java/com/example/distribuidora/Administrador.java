@@ -38,7 +38,7 @@ public class Administrador extends AppCompatActivity {
                 ActivityRegistroEmpleado();
 
             }
-            if (item.getItemId() == R.id.InventarioP) {
+            if (item.getItemId() == R.id.Orden) {
                 loadFragment(new Fragmentharina());
 
             }
