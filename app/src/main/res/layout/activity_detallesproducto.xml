@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detallesproducto">
+
+    <ImageView
+        android:id="@+id/producto_imgen_detalle"
+        android:layout_width="353dp"
+        android:layout_height="210dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/borde" />
+
+    <TextView
+        android:id="@+id/nombre_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/producto_imgen_detalle"
+        android:text="Nombre del Producto:"
+        android:gravity="center"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/precio_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descripcion_detalle"
+        android:text="Precio del Producto:"
+        android:gravity="center"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/descripcion_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre_detalle"
+        android:text="Detalle del Producto:"
+        android:gravity="center"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/stock_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/precio_detalle"
+        android:text="Stock:"
+        android:gravity="center"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/boton_sigiente_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir al Carrito"
+        android:textSize="15dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

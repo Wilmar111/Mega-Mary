@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#03A9F4"
+    android:gravity="bottom"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:theme="@style/ThemeOverlay.AppCompat">
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/usuario_perfil"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/empleado"
+        android:background="#03A9F4"
+        android:layout_gravity="center"/>
+<TextView
+    android:id="@+id/tvUsuario"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:text="Nombre"
+    android:textColor="@color/cardview_dark_background"
+    android:gravity="center"
+    android:textSize="20dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+
+</LinearLayout>

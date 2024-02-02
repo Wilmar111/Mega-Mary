@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Distribuidora</string>
+    <string name="default_web_client_id">tu_default_web_client_id</string>
+    <string-array name="opciones_spinner1">
+        <item>Super Extrar</item>
+        <item>Envejecido</item>
+        <item>Osito</item>
+        <!-- Añade más opciones según sea necesario -->
+    </string-array>
+
+    <string-array name="opciones_spinner2">
+        <item>amancay</item>
+        <item>Cayambe</item>
+        <item>Rapiditos</item>
+        <!-- Añade más opciones según sea necesario -->
+    </string-array>
+    <string-array name="opciones_spinner3">
+        <item>Real</item>
+        <item>ISABEL</item>
+        <item>VAN_CAMPS</item>
+        <!-- Añade más opciones según sea necesario -->
+    </string-array>
+
+    <style name="vavigation_drawer_open">
+        Open navigation drawer</style>
+
+    <style name="vavigation_drawer_close">
+        Close navigation drawer</style>
+
+
+    <string name="sign_out">Sign out</string>
+    <string name="revocar">Revocar</string>
+    <string name="title_activity_categorias">categorias</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

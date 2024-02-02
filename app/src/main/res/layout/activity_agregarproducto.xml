@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".agregarproducto">
+
+    <TextView
+        android:id="@+id/txtardregarPro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agreagaar Productos"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:background="#03A9F4"
+
+        android:padding="16dp"
+        android:textStyle="italic"/>
+
+    <ImageView
+        android:id="@+id/imglist"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/txtardregarPro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:cropToPadding="false"
+        android:src="@drawable/ic_menu_camera"
+        android:scaleType="fitCenter"
+       />
+    <EditText
+        android:id="@+id/edtCodigoPro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imglist"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el Codigo"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+    <EditText
+        android:id="@+id/edtNombrePro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCodigoPro"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el Nombre"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+    <EditText
+        android:id="@+id/edtDescripcionPro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtNombrePro"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese la Descripcion"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+    <EditText
+        android:id="@+id/edtStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtDescripcionPro"
+        android:inputType="number"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el Stock"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+    <EditText
+        android:id="@+id/edtPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtStock"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el Precio Unitario"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
+
+    <EditText
+        android:id="@+id/edtCantida"
+        android:layout_width="329dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/edtPrecio"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:hint="Ingrese la Cantidad"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnguardarp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPrecio"
+
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="40dp"
+        android:hint="Agregar Producto" />
+
+
+
+</RelativeLayout>

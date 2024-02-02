@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/txtardregarPro2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar Productos"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:background="#03A9F4"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/txtara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtardregarPro2"
+            android:layout_marginTop="19dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Arroz"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lnlA"
+            android:layout_width="394dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/txtara"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgarroz"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/arroz" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtarina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlA"
+            android:layout_marginTop="9dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Harina"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lblharina"
+            android:layout_width="399dp"
+            android:layout_height="88dp"
+            android:layout_below="@+id/txtarina"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imgharina"
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:src="@drawable/harina" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtharina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblharina"
+            android:layout_marginTop="17dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Aseo Personal"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lblaseo"
+            android:layout_width="404dp"
+            android:layout_height="77dp"
+            android:layout_below="@+id/txtharina"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgasop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/aseo" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtlicor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblaseo"
+            android:layout_marginTop="10dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Licor"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lbllicor"
+            android:layout_width="404dp"
+            android:layout_height="82dp"
+            android:layout_below="@+id/txtlicor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imglicor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/licor" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtlacteo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbllicor"
+            android:layout_marginTop="10dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Lacteo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lbllacteo"
+            android:layout_width="400dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/txtlacteo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imglacteo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/queso" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtgolocinas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbllacteo"
+            android:layout_marginTop="10dp"
+            android:background="#673AB7"
+            android:padding="1dp"
+            android:text="Lacteo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:id="@+id/lblgolocina"
+            android:layout_width="397dp"
+            android:layout_height="85dp"
+            android:layout_below="@+id/txtgolocinas"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imggolocinas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/queso" />
+        </LinearLayout>
+
+        <!-- Repite la estructura para otras secciones (harina, aseo, licor) -->
+
+    </RelativeLayout>
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

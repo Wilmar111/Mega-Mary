@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "129693569084",
+    "project_id": "distribuidora-38fd9",
+    "storage_bucket": "distribuidora-38fd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129693569084:android:ad9383f7e61541ec327339",
+        "android_client_info": {
+          "package_name": "com.example.distribuidora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNjZnn8t7YGE4JBPoaa5Y_Q1_uwOXX09s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

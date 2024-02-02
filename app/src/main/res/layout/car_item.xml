@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    app:cardElevation="15dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:background="#03A9F4">
+        <TextView
+            android:id="@+id/carNomPro"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre de Producto:"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:id="@+id/caRStockPro"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carNomPro"
+
+            android:text="Sock:"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/carPrecioPro"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carNomPro"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentEnd="true"
+            android:text="´Precio:"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mi_nav"
+    app:startDestination="@id/fragmentinicio">
+    <fragment
+        android:id="@+id/fragmentinicio"
+        android:name="com.example.distribuidora.Fragmentlicor"
+        android:label="fragment_fragmentlicor"
+        tools:layout="@layout/fragment_fragmentinicio" />
+    <fragment
+        android:id="@+id/fragmentPerfilAd"
+        android:name="com.example.distribuidora.Fragmentsoda"
+        android:label="fragment_fragmentsoda"
+        tools:layout="@layout/fragment_fragmentperfil" />
+
+    <fragment
+        android:id="@+id/fragmentlista"
+        android:name="com.example.distribuidora.Fragmentharina"
+        android:label="fragment_fragmentharina"
+        tools:layout="@layout/fragment_fragmentagregarpro" />
+    <fragment
+        android:id="@+id/choferFragment"
+        android:name="com.example.distribuidora.ChoferFragment"
+        android:label="fragment_chofer"
+        tools:layout="@layout/fragment_chofer" />
+
+</navigation>
