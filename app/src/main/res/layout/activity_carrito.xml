@@ -19,8 +19,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/carritoLista"
-        android:layout_width="399dp"
-        android:layout_height="542dp"
+        android:layout_width="match_parent"
+        android:layout_height="536dp"
         android:layout_below="@+id/textViewTop"
         android:layout_marginTop="5dp" />
 
@@ -39,11 +39,12 @@
             android:id="@+id/txtTotalCarrito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="19dp"
+            android:layout_marginBottom="69dp"
             android:text="Total a pagar"
             android:textAlignment="center"
             android:textSize="20dp" />
+
+
     </RelativeLayout>
 
     <TextView

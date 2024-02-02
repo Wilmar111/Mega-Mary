@@ -76,12 +76,37 @@
         android:id="@+id/btnterminarentrega"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edttelefonocon"
+        android:layout_below="@+id/formadepago"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="40dp"
         android:hint="Terminar Entrega"
         android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/formadepago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/generarubicacio"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnEfectivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagar en Efectivo"
+            android:onClick="onEfectivoButtonClick"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btnTransferencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onTransferenciaButtonClick"
+            android:text="Pagar por Transferencia"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
 
 
 </RelativeLayout>

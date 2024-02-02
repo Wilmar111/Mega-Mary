@@ -26,17 +26,14 @@ import java.util.HashMap;
 
 public class confiOrden extends AppCompatActivity {
     private GoogleMap googleMap;
-     FusedLocationProviderClient ubicacion;
-    private EditText nombre,correo, direccion,telefono;
+    private FusedLocationProviderClient ubicacion;
+    private EditText nombre, correo, direccion, telefono;
     private Button confirmar, generarasUbicacion;
-    private String totalPago="";
+    private String totalPago = "";
     private FirebaseAuth auth;
     private String CurrentUserId;
-
-
-
-
-
+    private Button btnPagarEfectivo, btnPagarTransferencia;
+    private String modoPago;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,105 +41,109 @@ public class confiOrden extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confi_orden);
 
-        totalPago=getIntent().getStringExtra("Total");
-        Toast.makeText(this, "Total a pagar: $ "+ totalPago, Toast.LENGTH_SHORT).show();
+        totalPago = getIntent().getStringExtra("Total");
+        Toast.makeText(this, "Total a pagar: $ " + totalPago, Toast.LENGTH_SHORT).show();
 
-        auth=FirebaseAuth.getInstance();
-        CurrentUserId=auth.getCurrentUser().getUid();
+        auth = FirebaseAuth.getInstance();
+        CurrentUserId = auth.getCurrentUser().getUid();
 
-        nombre= (EditText) findViewById(R.id.edtNombrecon);
-        correo=(EditText) findViewById(R.id.edtCorreocon);
+        nombre = findViewById(R.id.edtNombrecon);
+        correo = findViewById(R.id.edtCorreocon);
+        telefono = findViewById(R.id.edttelefonocon);
+        direccion = findViewById(R.id.edtEntrega);
+        confirmar = findViewById(R.id.btnterminarentrega);
+        generarasUbicacion = findViewById(R.id.generarubicacio);
+        btnPagarEfectivo = findViewById(R.id.btnEfectivo);
+        btnPagarTransferencia = findViewById(R.id.btnTransferencia);
 
-        telefono=(EditText) findViewById(R.id.edttelefonocon);
-        direccion=(EditText)findViewById(R.id.edtEntrega);
-        confirmar=(Button) findViewById(R.id.btnterminarentrega);
-        generarasUbicacion=(Button)findViewById(R.id.generarubicacio);
+        btnPagarEfectivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modoPago = "Efectivo";
+                ConfirmarOrden();
+                Toast.makeText(confiOrden.this, "Has elegido pagar en efectivo", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnPagarTransferencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modoPago = "Transferencia";
+                ConfirmarOrden();
+                Toast.makeText(confiOrden.this, "Has elegido pagar por transferencia", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         generarasUbicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(confiOrden.this, maps.class);
-            startActivity(intent);
+                Intent intent = new Intent(confiOrden.this, maps.class);
+                startActivity(intent);
             }
         });
+
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 VerificarDatos();
-
             }
         });
-
     }
 
-
-
-
     private void VerificarDatos() {
-
-        if(TextUtils.isEmpty(nombre.getText().toString())){
-            Toast.makeText(this, "Por favor Ingrese su Nombre ", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(correo.getText().toString())){
-            Toast.makeText(this, "Por favor Ingrese su Correo", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(direccion.getText().toString())){
-            Toast.makeText(this, "Por favor Ingrese su Direcione ", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(telefono.getText().toString())){
-            Toast.makeText(this, "Por favor Ingrese su Telefono ", Toast.LENGTH_SHORT).show();
-        }else{
+        if (TextUtils.isEmpty(nombre.getText().toString()) ||
+                TextUtils.isEmpty(correo.getText().toString()) ||
+                TextUtils.isEmpty(direccion.getText().toString()) ||
+                TextUtils.isEmpty(telefono.getText().toString())) {
+            Toast.makeText(this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show();
+        } else {
             ConfirmarOrden();
         }
-
-
-
     }
 
     private void ConfirmarOrden() {
-        final String CurrenTime, CurrenDate;
-        Calendar calendar=  Calendar.getInstance();
-        SimpleDateFormat dateFormat= new SimpleDateFormat("MM-dd-yyyy");
-        CurrenDate = dateFormat.format(calendar.getTime());
+        String currentTime, currentDate;
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+        currentDate = dateFormat.format(calendar.getTime());
 
-        SimpleDateFormat dateFormat1= new SimpleDateFormat("HH:mm:ss");
-        CurrenTime=dateFormat1.format((calendar.getTime()));
+        SimpleDateFormat dateFormat1 = new SimpleDateFormat("HH:mm:ss");
+        currentTime = dateFormat1.format((calendar.getTime()));
 
-        final DatabaseReference OrdenesRef= FirebaseDatabase.getInstance().getReference().child("Ordenes").child(CurrentUserId);
+        DatabaseReference OrdenesRef = FirebaseDatabase.getInstance().getReference().child("Ordenes").child(CurrentUserId);
 
-
-        HashMap<String, Object> map= new HashMap<>();
-        map.put("total",totalPago);
-        map.put("nombre",nombre.getText().toString());
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("total", totalPago);
+        map.put("nombre", nombre.getText().toString());
         map.put("correo", correo.getText().toString());
         map.put("direccion", direccion.getText().toString());
-        map.put("telefono",telefono.getText().toString());
-        map.put("fecha", CurrenDate);
-        map.put("hora",CurrenTime);
-        map.put("estado","No Enviado");
-
-
+        map.put("telefono", telefono.getText().toString());
+        map.put("fecha", currentDate);
+        map.put("hora", currentTime);
+        map.put("modoPago", modoPago);
+        map.put("estado", "No Enviado");
 
         OrdenesRef.updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     FirebaseDatabase.getInstance().getReference().child("Carrito")
                             .child("Usuario Compra").child(CurrentUserId).removeValue()
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(confiOrden.this, "Tu orden fue tomado con exito", Toast.LENGTH_SHORT).show();
-                                        Intent intent =new Intent(confiOrden.this, PrincipalM.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        Toast.makeText(confiOrden.this, "Tu orden fue tomada con éxito", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(confiOrden.this, PrincipalM.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                         finish();
-
                                     }
                                 }
                             });
                 }
-
             }
         });
-
-        }
     }
+}
 

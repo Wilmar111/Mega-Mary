@@ -171,14 +171,14 @@
                 android:src="@drawable/queso" />
         </LinearLayout>
         <TextView
-            android:id="@+id/txtgolocinas"
+            android:id="@+id/txtenlatados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lbllacteo"
             android:layout_marginTop="10dp"
             android:background="#673AB7"
             android:padding="1dp"
-            android:text="Lacteo"
+            android:text="Enlatados"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textStyle="italic" />
@@ -187,7 +187,7 @@
             android:id="@+id/lblgolocina"
             android:layout_width="397dp"
             android:layout_height="85dp"
-            android:layout_below="@+id/txtgolocinas"
+            android:layout_below="@+id/txtenlatados"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:gravity="center"
@@ -197,7 +197,7 @@
                 android:id="@+id/imggolocinas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/queso" />
+                android:src="@drawable/enlatados" />
         </LinearLayout>
 
         <!-- Repite la estructura para otras secciones (harina, aseo, licor) -->
